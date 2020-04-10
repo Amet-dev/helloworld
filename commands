@@ -1,1 +1,4 @@
-$ git config --list --show-origin //Чтобы посмотреть все установленные настройки и узнать где именно они заданы
+git config --list --show-origin //Чтобы посмотреть все установленные настройки и узнать где именно они заданы
+git init //
+git add FILE
+git commit -m 'text'
