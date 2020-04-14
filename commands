@@ -1,5 +1,53 @@
+'''
 git config --list --show-origin //Чтобы посмотреть все установленные настройки и узнать где именно они заданы
+git config --global user.name //задать имя пользователя
+git config --global core.editor //базовый редактор
 git init //создает структуру Git-репозитория
 git add FILE //указать индексируемые файлы
 git commit -m 'text'
 git clone 'url' 'директория' //клонировать репозиторий в директорию с именем
+git status //состояние файлов
+.gitignore//файл для исключений(!-как не исключать)
+git diff //то что изменили и не проиндексировали
+git diff --staged(--cached) //что войдет в след коммит(проиндексированное)
+git mv file_from file_to //переименование файла
+git log --pretty// вывод коммитов pretty=format:"%h,%an,%ar,%s" --graph дополнительно ветку и историю слияний
+git commit --amend //сохранить коммит как предыдущий
+git reset HEAD "file"//исключение из индекса
+git checkout -- <file>//откатывает файл к предыдущму коммиту(состояние файла теряется)
+git remote -v// имя сервера с которым работаем
+git
+remote add <shortname> <url>//добавить удаленный репозиторий
+git fetch <shortname> //получить изменения
+git merge //слить ветки
+git pull <shortname>//получить и слить ветки
+git push <remote-name> <branch-name>// отправить ветку на выбранный сервер
+git remote show origin //просмотр удаленного репозитория
+git remote rename <name1> <name2>//переименование репозитория
+git tag -l(--list)//просмотр меток
+git tag -a  v1.4//создает метку
+git push origin <tagname>//отправить метку на сервер
+git tag -d v1.4 ///удалить метку локально
+git push <remote> :refs/tags/<tagname> (git push origin --delete <tagname>)//удалить с сервера
+git checkout v2.0//перейти к тегу detached HEAD
+git checkout -b version2 v2.0 //переййти и сделать новую ветку
+git config --global alias.co checkout//создать сокращение команды checkout как co
+git branch name//создать ветку
+git checkout name//преключится на ветку//с параметром -b создание ветки
+git log --oneline --decorate --graph --all//отображения истории коммитов, текущего положения указателей веток и истории ветвления
+git merge hotfix//слияние с веткой master если на ней находимся
+git branch -d name //удалить ветку
+git mergetool //графическое исправление коммитов
+git branch -v//посмотреть коммиты веток --merged и --no-merged могут отфильтровать этот список для слитых или ещё не слитых веток
+git ls-remote <remote> или git remote show <remote> //список удаленных ссылок
+git clone -o имя_вместо_origin <url>
+config --global credential.helper cache//сохранение введеных паролей (к удаленным репозиторим на 15мин)
+git fetch origin//(не получаем доступ но можем слить marge для работы с ним)
+git checkout -b sf origin/serverfix//локальную ветку с именем, отличным от имени удалённой ветки
+git branch -u origin/serverfix// слежение за удалённой веткой
+git branch -vv//какая из веток отслеживается, отстаёт, опережает
+git push origin --delete serverfix//удаление ветки на сервере
+git checkout experiment | git rebase master //преобразование(после master c')перезапись предыдущих комиттов но не совсем
+git checkout master | git merge experiment//слияние перемоткой
+
+'''
