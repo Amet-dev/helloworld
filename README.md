@@ -1,3 +1,2 @@
 # helloworld
-just another repository
-это тестовый коммит
+моя личная шпаргалка по гит
